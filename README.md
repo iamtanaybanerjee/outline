@@ -14,4 +14,12 @@ This document provides an overview of the available APIs for user authentication
 | DELETE | `/user/task/:id`                  | Deletes a specific task by its ID.       | None |
 
 ## Notes
-- Ensure proper authentication is implemented for protected endpoints.
+- env file
+
+DB_HOST = aws-0-ap-south-1.pooler.supabase.com
+DB_USER = postgres.ahatjdnnexxsahtctjqy
+DB_PASSWORD= IwANfMa8I38ZVbGW
+DB_PORT=5432
+DB_NAME= postgres
+PORT = 3000
+JWT_SECRET = 16c30d3b2751c1c9b66b8a711b11dde9e8e2e960ce12ff9139c9e8e5e3b54d6a
