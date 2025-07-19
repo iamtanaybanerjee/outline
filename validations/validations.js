@@ -20,4 +20,17 @@ const doesUserExist = async (username) => {
   }
 };
 
-module.exports = { validateUsernameAndPassword, doesUserExist };
+const validateTaskProperties = (title, description, status) => {
+  const errors = [];
+  if (!title || typeof title !== "string" || title === "")
+    errors.push("title is required and cannot be empty");
+  if (!description || typeof description !== "string" || description === "")
+    errors.push("description is required and cannot be empty");
+  return errors;
+};
+
+module.exports = {
+  validateUsernameAndPassword,
+  doesUserExist,
+  validateTaskProperties,
+};
