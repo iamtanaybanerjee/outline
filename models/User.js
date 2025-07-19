@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
     "User",
@@ -14,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     { timestamps: true }
   );
+
+  User.prototype.comparePassword = async function (password) {
+    return await bcrypt.compare(password, this.password);
+  };
 
   User.associate = (models) => {
     User.hasMany(models.Task, { foreignKey: "userId" });
